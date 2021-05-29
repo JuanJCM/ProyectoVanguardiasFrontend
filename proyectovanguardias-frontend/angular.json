@@ -105,5 +105,8 @@
       }
     }
   },
+  "scripts": [
+    "src/assets/js/annyang.min.js"
+  ],
   "defaultProject": "proyectovanguardias-frontend"
 }
