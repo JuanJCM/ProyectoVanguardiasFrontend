@@ -32,7 +32,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/annyang.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -105,8 +107,5 @@
       }
     }
   },
-  "scripts": [
-    "src/assets/js/annyang.min.js"
-  ],
   "defaultProject": "proyectovanguardias-frontend"
 }

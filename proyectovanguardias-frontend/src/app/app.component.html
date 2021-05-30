@@ -3,20 +3,18 @@
     <h2 class="card-title">
        Bienvenido a tu asistente de voz personalizados
     </h2>
-   <button type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickList()" >
+   <button routerLink="/listar-ingredientes" type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickList()" >
     Lista Ingrediente
    </button>
-   <button type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickReceta()" >
+   <button routerLink="/recetas" type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickReceta()" >
     Recetas
   </button>
-  <button type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickReminder()" >
+  <button routerLink="/recordatorios" type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickReminder()" >
     Recordatorios
  </button>
- <div *ngIf="voiceActiveSectionDisabled; ">
-  <button type = "button" class = "btn btn-primary btn-lg" (click) = "OnClickVoice()" >
-    Escuchando
-  </button>  
- </div>
+ <br>
+ <app-comandodevoz></app-comandodevoz>
+ <div></div>
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
@@ -32,6 +30,7 @@
           </h2>
         </div>
       </div>
+      
     </div>
   </div>
 </div>

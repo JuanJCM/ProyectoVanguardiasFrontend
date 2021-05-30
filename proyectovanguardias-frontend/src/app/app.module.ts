@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ListatiendaComponent } from './components/listatienda/listatienda.component';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { RecetasComponent } from './components/recetas/recetas.component';
-
+import { ComandodevozComponent } from './components/comandodevoz/comandodevoz.component';
+import { TextoconvertidoComponent } from './components/textoconvertido/textoconvertido.component';
+import {}
 @NgModule({
   declarations: [
     AppComponent,
     ListatiendaComponent,
     RecordatorioComponent,
-    RecetasComponent
+    RecetasComponent,
+    ComandodevozComponent,
+    TextoconvertidoComponent
   ],
   imports: [
     BrowserModule,
