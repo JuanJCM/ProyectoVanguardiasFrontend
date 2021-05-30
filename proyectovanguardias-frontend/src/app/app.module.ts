@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+;
+import { MostrarlistaComponent } from './components/mostrarlista/mostrarlista.component'import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +17,8 @@ import {}
     RecordatorioComponent,
     RecetasComponent,
     ComandodevozComponent,
-    TextoconvertidoComponent
+    TextoconvertidoComponent,
+    MostrarlistaComponent
   ],
   imports: [
     BrowserModule,
