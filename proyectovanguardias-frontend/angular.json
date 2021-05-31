@@ -33,8 +33,13 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/annyang.min.js"
-            ]
+              "src/assets/js/annyang.min.js",
+                "node_modules/chart.js/dist/Chart.min.js"
+              ],
+              "allowedCommonJsDependencies": [
+                "chart.js"
+              ]
+            
           },
           "configurations": {
             "production": {
