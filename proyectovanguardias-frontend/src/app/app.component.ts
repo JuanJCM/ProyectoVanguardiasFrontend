@@ -49,7 +49,11 @@ export class AppComponent implements OnInit{
 
   }
   title = 'proyectovanguardias-frontend';
+  textShow = "";
 
+  showData(newTxt: any) {
+    this.textShow = newTxt
+  }
   
   OnClickVoice(){
 

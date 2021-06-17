@@ -3,7 +3,7 @@
     <button type = "button" class = "btn btn-primary btn-lg" (click) = "startVoiceRecognition()" >Record</button>
   </div>
   <ng-template #voicesection>
-    <ng-container *ngIf="!voiceActiveSectionError; else failure">
+    <!-- <ng-container *ngIf="!voiceActiveSectionError; else failure">
       <ng-container *ngIf="voiceText; else start">
           <span>{{voiceText}}</span>
       </ng-container>
@@ -19,7 +19,7 @@
     </ng-container>
     <ng-template #failure>
       <span>Didn't catch that</span>
-    </ng-template>
+    </ng-template> -->
     <div>
       <button type = "button" class = "btn btn-primary btn-lg" (click) = "closeVoiceRecognition()" >Close</button>
       <button type = "button" class = "btn btn-primary btn-lg" (click) = "startVoiceRecognition()" >Restart</button>
