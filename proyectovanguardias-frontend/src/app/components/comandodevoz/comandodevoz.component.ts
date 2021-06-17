@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, EventEmitter, Output} from '@angular/core';
 
 declare const annyang: any;
 @Component({
@@ -17,7 +17,12 @@ export class ComandodevozComponent implements OnInit {
   voiceActiveSectionListening: boolean = true;
   voiceText: any;
   texto: string = "";
+  @Output() showText = new EventEmitter<string>();
   constructor(private ngZone: NgZone){}
+
+  changeValue(txt: string) { 
+	this.showText.emit(txt);
+}	
 
 	initializeVoiceRecognitionCallback(): void {
 		annyang.addCallback('error', (err: { error: string; }) => {
@@ -28,11 +33,12 @@ export class ComandodevozComponent implements OnInit {
       } else if (this.voiceText === undefined) {
 				this.ngZone.run(() => this.voiceActiveSectionError = true);
 				annyang.abort();
+				this.changeValue("Didn't catch that")
 			}
 		});
 
 		annyang.addCallback('soundstart', () => {
-      this.ngZone.run(() => this.voiceActiveSectionListening = true);
+      this.ngZone.run(() => this.changeValue("Listening"));
 		});
 
 		annyang.addCallback('end', () => {
@@ -40,6 +46,7 @@ export class ComandodevozComponent implements OnInit {
         this.ngZone.run(() => this.voiceActiveSectionError = true);
 				annyang.abort();
 			}
+			this.changeValue("")
 		});
 
 		annyang.addCallback('result', (userSaid: any[]) => {
@@ -50,6 +57,7 @@ export class ComandodevozComponent implements OnInit {
 			annyang.abort();
 
       this.voiceText = queryText;
+	  this.changeValue(queryText)
 		this.texto = queryText;
 			this.ngZone.run(() => this.voiceActiveSectionListening = false);
       this.ngZone.run(() => this.voiceActiveSectionSuccess = true);
@@ -61,6 +69,7 @@ export class ComandodevozComponent implements OnInit {
 		this.voiceActiveSectionError = false;
 		this.voiceActiveSectionSuccess = false;
     this.voiceText = undefined;
+	this.changeValue("Start talking...")
 
 		if (annyang) {
 			let commands = {
