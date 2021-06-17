@@ -13,7 +13,7 @@
     Recordatorios
  </button>
  <br>
- <app-comandodevoz></app-comandodevoz>
+ <app-comandodevoz (showText)="showData($event)" ></app-comandodevoz>
  <div></div>
     <div class="container-fluid">
       <div class="card">
@@ -26,7 +26,7 @@
       <div class="card">
         <div class="card-body">
           <h2 class="card-title">
-            Esperando
+            {{textShow}}
           </h2>
         </div>
       </div>
